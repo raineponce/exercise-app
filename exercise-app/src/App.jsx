@@ -14,14 +14,20 @@ function App() {
 
   const togglePushups = () => {
     setSeePushups(true)
+    setSeeRunning(false)
+    setSeePlank(false)
   }
 
   const toggleRunning = () => {
     setSeeRunning(true)
+    setSeePushups(false)
+    setSeePlank(false)
   }
 
   const togglePlank = () => {
     setSeePlank(true)
+    setSeeRunning(false)
+    setSeePushups(false)
   }
 
   return (
@@ -42,6 +48,7 @@ function App() {
       <button onClick={togglePlank}>
         Plank
       </button>
+
       <RepetitionExercise name="Pushups" isVisible={seePushups} />
       <DurationExercise name="Running" isVisible={seeRunning} />
       <RepetitionExercise name="Plank" isVisible={seePlank} />
